@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us & Contact | VoltEdge</title>
+
+  <!-- Author: Mike Boynton | Date: November 8, 2026 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #080b12;
+      color: #f5f7ff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #05070c;
+      border-bottom: 1px solid #24304a;
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: -1px;
+    }
+
+    .brand span {
+      color: #4d80ff;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #c5cede;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: #729aff;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid #88aaff;
+      outline-offset: 5px;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: center;
+      gap: 40px;
+      padding: 70px 0 50px;
+    }
+
+    .eyebrow {
+      color: #88aaff;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin: 15px 0 22px;
+    }
+
+    h2 {
+      font-size: 29px;
+      margin: 0 0 16px;
+    }
+
+    h3 {
+      font-size: 21px;
+      margin: 0 0 8px;
+    }
+
+    p {
+      color: #bfc9dc;
+      margin: 0 0 16px;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 300px;
+      justify-self: center;
+      border-radius: 28px;
+      border: 1px solid #304b86;
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .panel,
+    .card {
+      background-color: #111827;
+      border: 1px solid #26324a;
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .story {
+      border-left: 5px solid #3366ff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .initials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      margin-bottom: 20px;
+      background-color: #244fe5;
+      border-radius: 50%;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .role {
+      color: #88aaff;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: #bfc9dc;
+    }
+
+    .contact-list li {
+      margin-bottom: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-list strong {
+      color: #ffffff;
+    }
+
+    .note {
+      font-size: 13px;
+      margin-top: 20px;
+    }
+
+    details {
+      padding: 16px 0;
+      border-bottom: 1px solid #26324a;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #f5f7ff;
+    }
+
+    details p {
+      margin: 12px 0 0;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 40px 24px;
+      background: linear-gradient(120deg, #122354, #101827);
+      border: 1px solid #304b86;
+      border-radius: 18px;
+      margin-top: 45px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #2855df;
+      color: #ffffff;
+      padding: 13px 24px;
+      border-radius: 9px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 8px;
+    }
+
+    .button:hover {
+      background-color: #1d43b7;
+    }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid #26324a;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 760px) {
+      .hero,
+      .grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero img {
+        max-width: 220px;
+      }
+
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="brand" href="index.html">Volt<span>Edge</span></a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="page2.html">Products</a>
+      <a href="page3.html" aria-current="page">About & Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero section with an original lightning-bolt logo image -->
+    <section class="hero">
+      <div>
+        <p class="eyebrow">The people behind the power</p>
+        <h1>Big ideas.<br>Fully charged.</h1>
+        <p>
+          We’re VoltEdge: three students with one goal—making everyday
+          technology more convenient, organized, and ready to go.
+        </p>
+        <a class="button" href="#contact">Connect With Us</a>
+      </div>
+
+      <img
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Crect width='320' height='320' rx='28' fill='%23101b38'/%3E%3Ccircle cx='160' cy='160' r='115' fill='%231c3580'/%3E%3Cpath d='M181 42L91 177H148L131 278L231 135H170Z' fill='%235b88ff'/%3E%3C/svg%3E"
+        alt="VoltEdge electric-blue lightning-bolt logo"
+        width="320"
+        height="320"
+      >
+    </section>
+
+    <!-- Fictional company origin story -->
+    <section class="panel story" aria-labelledby="story-heading">
+      <p class="eyebrow">Our origin story</p>
+      <h2 id="story-heading">Built for life at 1%.</h2>
+      <p>
+        VoltEdge started with a familiar campus problem: a dying phone,
+        a tangled charging cable, and nowhere convenient to plug in.
+        Mike Boynton, Emmanuel Salami, and Andrew Rabena imagined a
+        better way to keep students connected throughout a busy day.
+      </p>
+      <p>
+        Together, we created a fictional tech-accessory brand focused
+        on practical products with a clean, modern look. From wireless
+        charging pads and portable power banks to USB-C fast charging
+        cables, adjustable laptop stands, magnetic phone mounts, and
+        6-in-1 USB-C hubs, our lineup helps your setup work as hard as you do.
+      </p>
+      <p>
+        <strong>Our mission:</strong> Keep your devices powered,
+        your workspace organized, and your day moving.
+      </p>
+    </section>
+
+    <!-- Team members and fictional business roles -->
+    <section class="section" aria-labelledby="team-heading">
+      <p class="eyebrow">Meet the founders</p>
+      <h2 id="team-heading">Three minds. One VoltEdge.</h2>
+
+      <div class="grid">
+        <article class="card">
+          <div class="initials" aria-hidden="true">MB</div>
+          <h3>Mike Boynton</h3>
+          <p class="role">Co-Founder & Chief Executive Officer</p>
+          <p>
+            Mike guides VoltEdge’s vision and helps choose accessories
+            that solve everyday problems. His goal is to make useful
+            technology a natural part of student life.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="initials" aria-hidden="true">ES</div>
+          <h3>Emmanuel Salami</h3>
+          <p class="role">Co-Founder & Head of Marketing</p>
+          <p>
+            Emmanuel brings the VoltEdge brand to life through creative
+            promotions and fresh ideas. He focuses on connecting our
+            products with the students who need them.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="initials" aria-hidden="true">AR</div>
+          <h3>Andrew Rabena</h3>
+          <p class="role">Co-Founder & Product Director</p>
+          <p>
+            Andrew focuses on the details that make a setup more useful.
+            He helps build a product lineup centered on convenience,
+            portability, and an organized workspace.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Mock contact information and store hours -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <p class="eyebrow">Stay connected</p>
+      <h2 id="contact-heading">Let’s talk tech.</h2>
+
+      <div class="contact-grid">
+        <div class="panel">
+          <h3>Contact Details</h3>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> hello@voltedge.example.com</li>
+            <li><strong>Phone:</strong> (803) 555-0147</li>
+            <li>
+              <strong>Location:</strong> VoltEdge Campus Pop-Up,
+              Columbia, South Carolina
+            </li>
+            <li><strong>Instagram:</strong> @VoltEdgeTech</li>
+            <li><strong>TikTok:</strong> @VoltEdgeTech</li>
+          </ul>
+          <p class="note">
+            These are fictional contact details and social handles
+            for our class project.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>Store Hours</h3>
+          <ul class="contact-list">
+            <li><strong>Monday–Friday:</strong> 10:00 AM–6:00 PM</li>
+            <li><strong>Saturday:</strong> 11:00 AM–4:00 PM</li>
+            <li><strong>Sunday:</strong> Closed</li>
+          </ul>
+          <p>
+            Even our team needs time to recharge. Stop by during our
+            pretend store hours to explore your next setup upgrade!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel" aria-labelledby="faq-heading">
+      <p class="eyebrow">Good questions. Clear answers.</p>
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+      <details>
+        <summary>Who are VoltEdge products designed for?</summary>
+        <p>
+          Students, commuters, and anyone who wants a more convenient
+          way to charge devices and organize their workspace.
+        </p>
+      </details>
+
+      <details>
+        <summary>Will every accessory work with my device?</summary>
+        <p>
+          Compatibility depends on your device. Check its charging
+          features, ports, and connection requirements before choosing
+          an accessory.
+        </p>
+      </details>
+
+      <details>
+        <summary>Why the name VoltEdge?</summary>
+        <p>
+          “Volt” represents power, and “Edge” represents the advantage
+          of staying connected and prepared.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I actually place an order?</summary>
+        <p>
+          VoltEdge is a fictional business created for a student
+          website project. Our product listings are for demonstration.
+        </p>
+      </details>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Give your everyday setup an edge.</h2>
+      <p>Discover accessories that keep up with your day.</p>
+      <a class="button" href="page2.html">Explore Our Products</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2026 VoltEdge | Student Business Website Project
+      | Power your day.
+    </p>
+  </footer>
+</body>
+</html>
